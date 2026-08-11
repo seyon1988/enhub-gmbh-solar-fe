@@ -374,20 +374,20 @@ button.icon-btn:hover {
   border-radius: 30px;
   font-weight: 800;
   font-size: 1.1rem;
-  z-index: 1000;
+  z-index: 9999;
   backdrop-filter: blur(10px);
   text-align: center;
   pointer-events: none;
-  opacity: 0;
-  animation: periodicFlash 10s infinite;
+  animation: bannerSequence 10s infinite;
 }
 
-@keyframes periodicFlash {
+@keyframes bannerSequence {
   0% { opacity: 0; transform: translate(-50%, 50px); }
   5% { opacity: 1; transform: translate(-50%, 0); color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  15% { color: var(--cyan); border: 1px solid var(--cyan); box-shadow: 0 0 25px rgba(6, 182, 212, 0.8); }
+  
+  15%, 35% { color: var(--cyan); border: 1px solid var(--cyan); box-shadow: 0 0 30px var(--cyan); }
   25% { color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  35% { color: var(--cyan); border: 1px solid var(--cyan); box-shadow: 0 0 25px rgba(6, 182, 212, 0.8); }
+  
   45% { opacity: 1; transform: translate(-50%, 0); color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
   50% { opacity: 0; transform: translate(-50%, 50px); }
   100% { opacity: 0; transform: translate(-50%, 50px); }
