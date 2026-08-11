@@ -6,7 +6,7 @@ const resources = {
     translation: {
       "message": "Diese Webseite wird aktuell neu aufgebaut",
       "address": "EnHUB GmbH, Hauptstr. 16, D-88605 Meßkirch",
-      "tab1": "Start",
+      "tab1": "Welcome",
       "tab2": "Solar",
       "tab3": "Batterien",
       "tab4": "Info",
@@ -58,7 +58,7 @@ const resources = {
     translation: {
       "message": "This website is currently under reconstruction",
       "address": "EnHUB GmbH, Hauptstr. 16, D-88605 Meßkirch",
-      "tab1": "Home",
+      "tab1": "Welcome",
       "tab2": "Solar",
       "tab3": "Batteries",
       "tab4": "Info",
