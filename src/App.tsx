@@ -63,9 +63,11 @@ function App() {
       </div>
 
       <header>
-        {/* Redesigned Logo: Icon + Text instead of the old sprite */}
+        {/* Logo: Image + Text with background for visibility */}
         <div className="logo-container" onClick={() => scrollTo('home')}>
-          <Zap className="logo-icon" size={28} />
+          <div className="logo-bg-wrapper">
+            <img src="/logo_001.png" alt="EnHUB Logo" className="logo-img" />
+          </div>
           <span>EnHUB</span>
         </div>
         
