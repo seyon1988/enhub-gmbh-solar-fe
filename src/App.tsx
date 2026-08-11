@@ -82,13 +82,13 @@ function App() {
 
         <div className="controls">
           <button className="icon-btn" onClick={toggleLanguage} title="Toggle Language">
-            <Globe size={20} />
-            <span style={{ marginLeft: 4, fontSize: '0.875rem', fontWeight: 'bold' }}>
+            <Globe size={32} />
+            <span style={{ marginLeft: 8, fontSize: '1.25rem', fontWeight: 'bold' }}>
               {i18n.language.toUpperCase()}
             </span>
           </button>
           <button className="icon-btn" onClick={() => setIsDark(!isDark)} title="Toggle Theme">
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            {isDark ? <Sun size={32} /> : <Moon size={32} />}
           </button>
         </div>
       </header>
