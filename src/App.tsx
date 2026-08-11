@@ -91,6 +91,11 @@ function App() {
         </div>
       </header>
 
+      {/* Flashing Construction Banner */}
+      <div className="construction-banner">
+        Diese Webseite wird aktuell neu aufgebaut
+      </div>
+
       <main>
         {/* 1. HERO SECTION */}
         <section id="home" className="section hero-section">
