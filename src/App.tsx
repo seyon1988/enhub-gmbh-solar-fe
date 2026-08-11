@@ -110,12 +110,17 @@ function App() {
         </nav>
 
         <div className="controls desktop-controls">
-          <button className="icon-btn" onClick={toggleLanguage} title="Toggle Language">
-            <Globe size={32} />
-            <span style={{ marginLeft: 8, fontSize: '1.25rem', fontWeight: 'bold' }}>
-              {i18n.language.toUpperCase()}
+          <label className="lang-switch" title="Toggle Language">
+            <input 
+              type="checkbox" 
+              checked={i18n.language === 'en'} 
+              onChange={toggleLanguage} 
+            />
+            <span className="lang-slider">
+              <span className="lang-label lang-de">DE</span>
+              <span className="lang-label lang-en">EN</span>
             </span>
-          </button>
+          </label>
           <button className="icon-btn" onClick={() => setIsDark(!isDark)} title="Toggle Theme">
             {isDark ? <Sun size={32} /> : <Moon size={32} />}
           </button>
@@ -139,14 +144,19 @@ function App() {
         </nav>
 
         <div className="mobile-controls">
-          <button className="icon-btn" onClick={toggleLanguage} title="Toggle Language">
-            <Globe size={24} />
-            <span style={{ marginLeft: 8, fontSize: '1.1rem', fontWeight: 'bold' }}>
-              {i18n.language.toUpperCase()}
+          <label className="lang-switch" title="Toggle Language">
+            <input 
+              type="checkbox" 
+              checked={i18n.language === 'en'} 
+              onChange={toggleLanguage} 
+            />
+            <span className="lang-slider">
+              <span className="lang-label lang-de">DE</span>
+              <span className="lang-label lang-en">EN</span>
             </span>
-          </button>
+          </label>
           <button className="icon-btn" onClick={() => setIsDark(!isDark)} title="Toggle Theme">
-            {isDark ? <Sun size={24} /> : <Moon size={24} />}
+            {isDark ? <Sun size={28} /> : <Moon size={28} />}
           </button>
         </div>
       </div>
