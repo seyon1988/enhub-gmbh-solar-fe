@@ -230,16 +230,16 @@ button.icon-btn:hover {
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-  animation: heroBgFlash 4.5s infinite ease-in-out;
+  animation: heroBgFlash 5.25s infinite ease-in-out;
 }
 
 @keyframes heroBgFlash {
-  0%, 89%, 94.5%, 100% { 
+  0%, 76.19%, 85.71%, 90.48%, 100% { 
     background: rgba(15, 23, 42, 0.7); 
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); 
     border-color: rgba(255,255,255,0.1);
   }
-  92%, 97% { 
+  80.95%, 95.24% { 
     background: rgba(6, 182, 212, 0.25); 
     box-shadow: 0 0 50px rgba(6, 182, 212, 0.6); 
     border-color: var(--cyan);
@@ -253,12 +253,12 @@ button.icon-btn:hover {
   margin-bottom: 2rem;
   font-weight: 800;
   text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  animation: heroCyanFlash 4.5s infinite ease-in-out;
+  animation: heroCyanFlash 5.25s infinite ease-in-out;
 }
 
 @keyframes heroCyanFlash {
-  0%, 89%, 94.5%, 100% { color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-  92%, 97% { color: var(--cyan); text-shadow: 0 0 35px var(--cyan); }
+  0%, 76.19%, 85.71%, 90.48%, 100% { color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  80.95%, 95.24% { color: var(--cyan); text-shadow: 0 0 35px var(--cyan); }
 }.section-content {
   background: var(--bg-color);
   width: 100%;
