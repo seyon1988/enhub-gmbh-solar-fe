@@ -709,3 +709,92 @@ footer {
 
 .hero-line-15 { top: 25%; left: -300px; height: 2px; width: 400px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); animation: shootHorizontal 5s infinite linear; animation-delay: 3.1s; }
 .hero-line-16 { top: 70%; right: -300px; height: 2px; width: 380px; background: linear-gradient(270deg, transparent, var(--cyan), transparent); animation: shootHorizontalReverse 4.7s infinite linear; animation-delay: 1.3s; }
+
+/* Hamburger Button & Mobile Menu Drawer */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--cyan);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 0 1.25rem;
+    height: 70px;
+  }
+
+  .desktop-nav,
+  .desktop-controls {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu-overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    padding: 1.5rem 1.25rem;
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .mobile-menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .mobile-nav a {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 1.15rem;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .mobile-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+  }
+}

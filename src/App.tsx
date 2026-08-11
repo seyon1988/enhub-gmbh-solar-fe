@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Moon, Sun, Globe, Phone, Mail, MapPin, Leaf, Shield, Info } from 'lucide-react';
+import { Moon, Sun, Globe, Phone, Mail, MapPin, Leaf, Shield, Info, Menu, X } from 'lucide-react';
 import './index.css';
 
 // Intersection Observer Hook for scroll animations
@@ -30,6 +30,7 @@ function App() {
   const { t, i18n } = useTranslation();
   const [isDark, setIsDark] = useState(true);
   const [activeTab, setActiveTab] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useScrollReveal();
 
@@ -69,6 +70,7 @@ function App() {
 
   const scrollTo = (id: string) => {
     setActiveTab(id);
+    setIsMenuOpen(false);
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -98,7 +100,7 @@ function App() {
           <span className="logo-text">EnHUB</span>
         </div>
         
-        <nav>
+        <nav className="desktop-nav">
           <a className={activeTab === 'home' ? 'active' : ''} onClick={() => scrollTo('home')}>{t('tab1')}</a>
           <a className={activeTab === 'solar' ? 'active' : ''} onClick={() => scrollTo('solar')}>{t('tab2')}</a>
           <a className={activeTab === 'batteries' ? 'active' : ''} onClick={() => scrollTo('batteries')}>{t('tab3')}</a>
@@ -107,7 +109,7 @@ function App() {
           <a className={activeTab === 'contact' ? 'active' : ''} onClick={() => scrollTo('contact')}>{t('tab6')}</a>
         </nav>
 
-        <div className="controls">
+        <div className="controls desktop-controls">
           <button className="icon-btn" onClick={toggleLanguage} title="Toggle Language">
             <Globe size={32} />
             <span style={{ marginLeft: 8, fontSize: '1.25rem', fontWeight: 'bold' }}>
@@ -118,7 +120,36 @@ function App() {
             {isDark ? <Sun size={32} /> : <Moon size={32} />}
           </button>
         </div>
+
+        {/* Mobile Hamburger Toggle */}
+        <button className="hamburger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
+          {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+        </button>
       </header>
+
+      {/* Mobile Dropdown Menu Drawer */}
+      <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav">
+          <a className={activeTab === 'home' ? 'active' : ''} onClick={() => scrollTo('home')}>{t('tab1')}</a>
+          <a className={activeTab === 'solar' ? 'active' : ''} onClick={() => scrollTo('solar')}>{t('tab2')}</a>
+          <a className={activeTab === 'batteries' ? 'active' : ''} onClick={() => scrollTo('batteries')}>{t('tab3')}</a>
+          <a className={activeTab === 'info' ? 'active' : ''} onClick={() => scrollTo('info')}>{t('tab4')}</a>
+          <a className={activeTab === 'about' ? 'active' : ''} onClick={() => scrollTo('about')}>{t('tab5')}</a>
+          <a className={activeTab === 'contact' ? 'active' : ''} onClick={() => scrollTo('contact')}>{t('tab6')}</a>
+        </nav>
+
+        <div className="mobile-controls">
+          <button className="icon-btn" onClick={toggleLanguage} title="Toggle Language">
+            <Globe size={24} />
+            <span style={{ marginLeft: 8, fontSize: '1.1rem', fontWeight: 'bold' }}>
+              {i18n.language.toUpperCase()}
+            </span>
+          </button>
+          <button className="icon-btn" onClick={() => setIsDark(!isDark)} title="Toggle Theme">
+            {isDark ? <Sun size={24} /> : <Moon size={24} />}
+          </button>
+        </div>
+      </div>
 
       <main>
         {/* 1. HERO SECTION */}
