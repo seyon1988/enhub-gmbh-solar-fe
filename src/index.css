@@ -2,10 +2,10 @@
 
 :root {
   --bg-color: #ffffff;
-  --bg-color-alt: #f1f5f9;
-  --text-color: #1a1a1a;
+  --bg-color-alt: #f8fafc;
+  --text-color: #1e293b;
   --text-muted: #64748b;
-  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg: rgba(255, 255, 255, 0.9);
   --footer-bg: rgba(255, 255, 255, 0.95);
   --accent: #f59e0b; 
   --accent-hover: #d97706;
@@ -14,16 +14,16 @@
 }
 
 html.dark {
-  --bg-color: #0f172a;
-  --bg-color-alt: #1e293b;
+  --bg-color: #0b1120;
+  --bg-color-alt: #111827;
   --text-color: #f8fafc;
   --text-muted: #94a3b8;
-  --header-bg: rgba(15, 23, 42, 0.85);
-  --footer-bg: rgba(15, 23, 42, 0.95);
+  --header-bg: rgba(13, 20, 36, 0.85); /* Beautiful deeper dark header */
+  --footer-bg: rgba(13, 20, 36, 0.95);
   --accent: #fbbf24;
   --accent-hover: #f59e0b;
-  --card-bg: #1e293b;
-  --border-color: #334155;
+  --card-bg: #1f2937;
+  --border-color: #374151;
 }
 
 * {
@@ -53,15 +53,14 @@ html, body {
 }
 
 .app-container::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 .app-container::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
 .app-container::-webkit-scrollbar-thumb {
   background-color: var(--accent);
-  border-radius: 6px;
-  border: 3px solid var(--bg-color);
+  border-radius: 5px;
 }
 
 header {
@@ -71,28 +70,34 @@ header {
   right: 0;
   height: 80px;
   background: var(--header-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.logo-sprite {
-  width: 20px;
-  height: 20px;
-  background-image: url('/logos_20x20.png');
-  background-size: 2000% 2000%;
-  background-position: 0 0; 
-  transform: scale(2);
-  transform-origin: left center;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.logo-icon {
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
 }
 
 nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 nav a {
@@ -101,6 +106,7 @@ nav a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s;
+  font-size: 0.95rem;
 }
 
 nav a:hover {
@@ -191,73 +197,85 @@ button.icon-btn:hover {
   font-weight: 800;
 }
 
-/* Info Section */
-.info-section {
+/* Section Common */
+.section-content {
+  background: var(--bg-color);
+  width: 100%;
+}
+.section-content-alt {
   background: var(--bg-color-alt);
+  width: 100%;
+}
+.section-title {
   text-align: center;
-  padding: 0 2rem;
-}
-
-.info-section h2 {
-  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-size: 2.5rem;
 }
-.info-section > p {
+.section-subtitle {
+  text-align: center;
   color: var(--text-muted);
   margin-bottom: 3rem;
   font-size: 1.1rem;
 }
 
-.services-grid {
+/* Grid Layouts for Products */
+.pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   width: 100%;
   max-width: 1000px;
+  padding: 0 2rem;
+  margin: 0 auto;
 }
 
-.service-card {
+.pricing-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
   box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card:hover {
+.pricing-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.3);
   border-color: var(--accent);
 }
 
-.service-icon {
+.pricing-icon {
   color: var(--accent);
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: rgba(245, 158, 11, 0.1);
-  border-radius: 50%;
 }
 
-.service-card h3 {
-  font-size: 1.25rem;
+.pricing-card h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.service-card p {
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+  font-size: 1.25rem;
+  line-height: 1.8;
   color: var(--text-muted);
-  line-height: 1.6;
 }
 
 /* Contact Section */
-.contact-section {
-  background: var(--bg-color);
-}
-
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -265,6 +283,7 @@ button.icon-btn:hover {
   max-width: 1000px;
   width: 100%;
   padding: 0 2rem;
+  margin: 0 auto;
 }
 
 .contact-info {

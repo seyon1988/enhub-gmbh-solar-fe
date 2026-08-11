@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Moon, Sun, Globe, Sun as SunIcon, Battery, Zap, Phone, Mail, MapPin } from 'lucide-react';
+import { Moon, Sun, Globe, Sun as SunIcon, Battery, Zap, Phone, Mail, MapPin, Leaf, Shield, Info } from 'lucide-react';
 import './index.css';
 
 // Intersection Observer Hook for scroll animations
@@ -54,12 +54,19 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <div className="logo-sprite" title="EnHUB Logo" />
+        {/* Redesigned Logo: Icon + Text instead of the old sprite */}
+        <div className="logo-container" onClick={() => scrollTo('home')}>
+          <Zap className="logo-icon" size={28} />
+          <span>EnHUB</span>
+        </div>
         
         <nav>
           <a onClick={() => scrollTo('home')}>{t('tab1')}</a>
-          <a onClick={() => scrollTo('info')}>{t('tab2')}</a>
-          <a onClick={() => scrollTo('contact')}>{t('tab3')}</a>
+          <a onClick={() => scrollTo('solar')}>{t('tab2')}</a>
+          <a onClick={() => scrollTo('batteries')}>{t('tab3')}</a>
+          <a onClick={() => scrollTo('info')}>{t('tab4')}</a>
+          <a onClick={() => scrollTo('about')}>{t('tab5')}</a>
+          <a onClick={() => scrollTo('contact')}>{t('tab6')}</a>
         </nav>
 
         <div className="controls">
@@ -76,41 +83,107 @@ function App() {
       </header>
 
       <main>
-        {/* HERO SECTION */}
+        {/* 1. HERO SECTION */}
         <section id="home" className="section hero-section">
           <div className="hero-content animate-on-scroll">
             <h1>{t('message')}</h1>
           </div>
         </section>
 
-        {/* INFO SECTION */}
-        <section id="info" className="section info-section">
-          <h2 className="animate-on-scroll">{t('info_title')}</h2>
-          <p className="animate-on-scroll">{t('info_desc')}</p>
+        {/* 2. SOLAR PANELS SECTION */}
+        <section id="solar" className="section section-content-alt">
+          <h2 className="section-title animate-on-scroll">{t('solar_title')}</h2>
+          <p className="section-subtitle animate-on-scroll">{t('solar_desc')}</p>
           
-          <div className="services-grid">
-            <div className="service-card animate-on-scroll delay-100">
-              <SunIcon className="service-icon" size={48} />
+          <div className="pricing-grid">
+            <div className="pricing-card animate-on-scroll delay-100">
+              <SunIcon className="pricing-icon" size={48} />
+              <h3>{t('solar_p1_title')}</h3>
+              <div className="price">{t('solar_p1_price')}</div>
+              <p>Standard Module for efficient home energy generation.</p>
+            </div>
+            
+            <div className="pricing-card animate-on-scroll delay-200">
+              <SunIcon className="pricing-icon" size={48} />
+              <h3>{t('solar_p2_title')}</h3>
+              <div className="price">{t('solar_p2_price')}</div>
+              <p>High performance panels for demanding setups.</p>
+            </div>
+            
+            <div className="pricing-card animate-on-scroll delay-300">
+              <SunIcon className="pricing-icon" size={48} />
+              <h3>{t('solar_p3_title')}</h3>
+              <div className="price">{t('solar_p3_price')}</div>
+              <p>Maximum yield and durability for commercial use.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. BATTERIES SECTION */}
+        <section id="batteries" className="section section-content">
+          <h2 className="section-title animate-on-scroll">{t('battery_title')}</h2>
+          <p className="section-subtitle animate-on-scroll">{t('battery_desc')}</p>
+          
+          <div className="pricing-grid">
+            <div className="pricing-card animate-on-scroll delay-100">
+              <Battery className="pricing-icon" size={48} />
+              <h3>{t('bat_1_title')}</h3>
+              <div className="price">{t('bat_1_price')}</div>
+              <p>Perfect for small households and essential backup.</p>
+            </div>
+            
+            <div className="pricing-card animate-on-scroll delay-200">
+              <Battery className="pricing-icon" size={48} />
+              <h3>{t('bat_2_title')}</h3>
+              <div className="price">{t('bat_2_price')}</div>
+              <p>Ideal balance of storage for average homes.</p>
+            </div>
+            
+            <div className="pricing-card animate-on-scroll delay-300">
+              <Battery className="pricing-icon" size={48} />
+              <h3>{t('bat_3_title')}</h3>
+              <div className="price">{t('bat_3_price')}</div>
+              <p>Large capacity storage for maximum independence.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. INFO SECTION */}
+        <section id="info" className="section section-content-alt">
+          <h2 className="section-title animate-on-scroll">{t('info_title')}</h2>
+          <p className="section-subtitle animate-on-scroll">{t('info_desc')}</p>
+          
+          <div className="pricing-grid">
+            <div className="pricing-card animate-on-scroll delay-100">
+              <Leaf className="pricing-icon" size={48} />
               <h3>{t('srv_solar_title')}</h3>
               <p>{t('srv_solar_desc')}</p>
             </div>
             
-            <div className="service-card animate-on-scroll delay-200">
-              <Battery className="service-icon" size={48} />
+            <div className="pricing-card animate-on-scroll delay-200">
+              <Shield className="pricing-icon" size={48} />
               <h3>{t('srv_battery_title')}</h3>
               <p>{t('srv_battery_desc')}</p>
             </div>
             
-            <div className="service-card animate-on-scroll delay-300">
-              <Zap className="service-icon" size={48} />
+            <div className="pricing-card animate-on-scroll delay-300">
+              <Info className="pricing-icon" size={48} />
               <h3>{t('srv_manage_title')}</h3>
               <p>{t('srv_manage_desc')}</p>
             </div>
           </div>
         </section>
 
-        {/* CONTACT SECTION */}
-        <section id="contact" className="section contact-section">
+        {/* 5. ABOUT US SECTION */}
+        <section id="about" className="section section-content">
+          <h2 className="section-title animate-on-scroll">{t('about_title')}</h2>
+          <div className="about-container animate-on-scroll delay-200">
+            <p>{t('about_desc')}</p>
+          </div>
+        </section>
+
+        {/* 6. CONTACT SECTION */}
+        <section id="contact" className="section section-content-alt">
           <div className="contact-container">
             <div className="contact-info animate-on-scroll">
               <h2>{t('contact_title')}</h2>
