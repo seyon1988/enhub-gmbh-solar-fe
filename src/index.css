@@ -417,3 +417,87 @@ footer {
     gap: 2rem;
   }
 }
+
+/* Moving Electricity Overlay Animations */
+.electricity-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1; /* Below content, above base bg */
+  overflow: hidden;
+}
+
+.electric-line {
+  position: absolute;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 10px var(--accent));
+}
+
+.line-1 {
+  top: 15%;
+  left: -300px;
+  height: 2px;
+  width: 300px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: shootHorizontal 5s infinite linear;
+}
+
+.line-2 {
+  top: 45%;
+  right: -300px;
+  height: 2px;
+  width: 300px;
+  background: linear-gradient(270deg, transparent, var(--accent), transparent);
+  animation: shootHorizontalReverse 7s infinite linear;
+  animation-delay: 2s;
+}
+
+.line-3 {
+  top: 85%;
+  left: -300px;
+  height: 2px;
+  width: 300px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: shootHorizontal 6s infinite linear;
+  animation-delay: 1s;
+}
+
+.line-4 {
+  left: 25%;
+  top: -300px;
+  width: 2px;
+  height: 300px;
+  background: linear-gradient(180deg, transparent, var(--accent), transparent);
+  animation: shootVertical 8s infinite linear;
+  animation-delay: 3s;
+}
+
+.line-5 {
+  right: 15%;
+  bottom: -300px;
+  width: 2px;
+  height: 300px;
+  background: linear-gradient(0deg, transparent, var(--accent), transparent);
+  animation: shootVerticalReverse 6s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes shootHorizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 600px)); }
+}
+
+@keyframes shootHorizontalReverse {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100vw - 600px)); }
+}
+
+@keyframes shootVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(100vh + 600px)); }
+}
+
+@keyframes shootVerticalReverse {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(-100vh - 600px)); }
+}

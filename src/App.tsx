@@ -53,6 +53,15 @@ function App() {
 
   return (
     <div className="app-container">
+      {/* Moving Electricity Overlay */}
+      <div className="electricity-overlay">
+        <div className="electric-line line-1"></div>
+        <div className="electric-line line-2"></div>
+        <div className="electric-line line-3"></div>
+        <div className="electric-line line-4"></div>
+        <div className="electric-line line-5"></div>
+      </div>
+
       <header>
         {/* Redesigned Logo: Icon + Text instead of the old sprite */}
         <div className="logo-container" onClick={() => scrollTo('home')}>
