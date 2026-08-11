@@ -108,21 +108,21 @@ function App() {
           
           <div className="pricing-grid">
             <div className="pricing-card animate-on-scroll delay-100">
-              <SunIcon className="pricing-icon" size={48} />
+              <div className="product-img-wrapper"><img src="/panel.jpg" alt="Solar Panel" className="product-img" /></div>
               <h3>{t('solar_p1_title')}</h3>
               <div className="price">{t('solar_p1_price')}</div>
               <p>Standard Module for efficient home energy generation.</p>
             </div>
             
             <div className="pricing-card animate-on-scroll delay-200">
-              <SunIcon className="pricing-icon" size={48} />
+              <div className="product-img-wrapper"><img src="/panel.jpg" alt="Solar Panel" className="product-img" /></div>
               <h3>{t('solar_p2_title')}</h3>
               <div className="price">{t('solar_p2_price')}</div>
               <p>High performance panels for demanding setups.</p>
             </div>
             
             <div className="pricing-card animate-on-scroll delay-300">
-              <SunIcon className="pricing-icon" size={48} />
+              <div className="product-img-wrapper"><img src="/panel.jpg" alt="Solar Panel" className="product-img" /></div>
               <h3>{t('solar_p3_title')}</h3>
               <div className="price">{t('solar_p3_price')}</div>
               <p>Maximum yield and durability for commercial use.</p>
@@ -137,21 +137,21 @@ function App() {
           
           <div className="pricing-grid">
             <div className="pricing-card animate-on-scroll delay-100">
-              <Battery className="pricing-icon" size={48} />
+              <div className="product-img-wrapper"><img src="/battery.jpg" alt="Battery" className="product-img" /></div>
               <h3>{t('bat_1_title')}</h3>
               <div className="price">{t('bat_1_price')}</div>
               <p>Perfect for small households and essential backup.</p>
             </div>
             
             <div className="pricing-card animate-on-scroll delay-200">
-              <Battery className="pricing-icon" size={48} />
+              <div className="product-img-wrapper"><img src="/battery.jpg" alt="Battery" className="product-img" /></div>
               <h3>{t('bat_2_title')}</h3>
               <div className="price">{t('bat_2_price')}</div>
               <p>Ideal balance of storage for average homes.</p>
             </div>
             
             <div className="pricing-card animate-on-scroll delay-300">
-              <Battery className="pricing-icon" size={48} />
+              <div className="product-img-wrapper"><img src="/battery.jpg" alt="Battery" className="product-img" /></div>
               <h3>{t('bat_3_title')}</h3>
               <div className="price">{t('bat_3_price')}</div>
               <p>Large capacity storage for maximum independence.</p>
