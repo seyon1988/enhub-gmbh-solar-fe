@@ -1,122 +1,164 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Moon, Sun, Globe, Sun as SunIcon, Battery, Zap, Phone, Mail, MapPin } from 'lucide-react';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Intersection Observer Hook for scroll animations
+function useScrollReveal() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 }
 
-export default App
+function App() {
+  const { t, i18n } = useTranslation();
+  const [isDark, setIsDark] = useState(true);
+
+  useScrollReveal();
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'de' ? 'en' : 'de');
+  };
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="app-container">
+      <header>
+        <div className="logo-sprite" title="EnHUB Logo" />
+        
+        <nav>
+          <a onClick={() => scrollTo('home')}>{t('tab1')}</a>
+          <a onClick={() => scrollTo('info')}>{t('tab2')}</a>
+          <a onClick={() => scrollTo('contact')}>{t('tab3')}</a>
+        </nav>
+
+        <div className="controls">
+          <button className="icon-btn" onClick={toggleLanguage} title="Toggle Language">
+            <Globe size={20} />
+            <span style={{ marginLeft: 4, fontSize: '0.875rem', fontWeight: 'bold' }}>
+              {i18n.language.toUpperCase()}
+            </span>
+          </button>
+          <button className="icon-btn" onClick={() => setIsDark(!isDark)} title="Toggle Theme">
+            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
+      </header>
+
+      <main>
+        {/* HERO SECTION */}
+        <section id="home" className="section hero-section">
+          <div className="hero-content animate-on-scroll">
+            <h1>{t('message')}</h1>
+          </div>
+        </section>
+
+        {/* INFO SECTION */}
+        <section id="info" className="section info-section">
+          <h2 className="animate-on-scroll">{t('info_title')}</h2>
+          <p className="animate-on-scroll">{t('info_desc')}</p>
+          
+          <div className="services-grid">
+            <div className="service-card animate-on-scroll delay-100">
+              <SunIcon className="service-icon" size={48} />
+              <h3>{t('srv_solar_title')}</h3>
+              <p>{t('srv_solar_desc')}</p>
+            </div>
+            
+            <div className="service-card animate-on-scroll delay-200">
+              <Battery className="service-icon" size={48} />
+              <h3>{t('srv_battery_title')}</h3>
+              <p>{t('srv_battery_desc')}</p>
+            </div>
+            
+            <div className="service-card animate-on-scroll delay-300">
+              <Zap className="service-icon" size={48} />
+              <h3>{t('srv_manage_title')}</h3>
+              <p>{t('srv_manage_desc')}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT SECTION */}
+        <section id="contact" className="section contact-section">
+          <div className="contact-container">
+            <div className="contact-info animate-on-scroll">
+              <h2>{t('contact_title')}</h2>
+              <p>{t('contact_desc')}</p>
+              
+              <div className="contact-details">
+                <div className="contact-detail-item animate-on-scroll delay-100">
+                  <Phone size={24} />
+                  <span>{t('phone')}</span>
+                </div>
+                <div className="contact-detail-item animate-on-scroll delay-200">
+                  <Mail size={24} />
+                  <span>{t('email')}</span>
+                </div>
+                <div className="contact-detail-item animate-on-scroll delay-300">
+                  <MapPin size={24} />
+                  <span>{t('address')}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="contact-form animate-on-scroll delay-200">
+              <div className="form-group">
+                <input type="text" id="name" placeholder=" " />
+                <label htmlFor="name">{t('form_name')}</label>
+              </div>
+              
+              <div className="form-group">
+                <input type="email" id="email" placeholder=" " />
+                <label htmlFor="email">{t('form_email')}</label>
+              </div>
+              
+              <div className="form-group">
+                <textarea id="message" placeholder=" "></textarea>
+                <label htmlFor="message">{t('form_message')}</label>
+              </div>
+              
+              <button className="submit-btn">{t('form_submit')}</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        {t('address')}
+      </footer>
+    </div>
+  );
+}
+
+export default App;
