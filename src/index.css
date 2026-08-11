@@ -125,13 +125,19 @@ nav a {
   font-weight: 600;
   color: var(--cyan);
   text-decoration: none;
-  transition: color 0.2s, text-shadow 0.2s;
+  transition: all 0.3s ease;
   font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  border-radius: 20px;
+  background: rgba(6, 182, 212, 0.05);
 }
 
 nav a:hover {
   color: #fff;
-  text-shadow: 0 0 8px var(--cyan);
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+  border-color: var(--cyan);
 }
 
 .controls {
