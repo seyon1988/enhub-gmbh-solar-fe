@@ -54,15 +54,18 @@ html, body {
   scroll-behavior: smooth;
 }
 
-.app-container::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
-.app-container::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
-.app-container::-webkit-scrollbar-thumb {
-  background-color: var(--accent);
+::-webkit-scrollbar-thumb {
+  background-color: #ea580c;
   border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c2410c;
 }
 
 header {
