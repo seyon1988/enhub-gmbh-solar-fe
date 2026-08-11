@@ -230,13 +230,18 @@ button.icon-btn:hover {
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  color: #fff; 
+  font-size: 4rem;
+  margin-bottom: 2rem;
   font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  animation: heroCyanFlash 10s infinite ease-in-out;
 }
 
-/* Section Common */
-.section-content {
+@keyframes heroCyanFlash {
+  0%, 85%, 100% { color: var(--text-color); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  90%, 96% { color: var(--cyan); text-shadow: 0 0 35px var(--cyan); }
+  93% { color: var(--text-color); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+}.section-content {
   background: var(--bg-color);
   width: 100%;
 }
@@ -363,35 +368,6 @@ button.icon-btn:hover {
   color: var(--text-muted);
 }
 
-/* Construction Banner */
-.construction-banner {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--card-bg);
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-  font-weight: 800;
-  font-size: 1.1rem;
-  z-index: 9999;
-  backdrop-filter: blur(10px);
-  text-align: center;
-  pointer-events: none;
-  animation: bannerSequence 10s infinite;
-}
-
-@keyframes bannerSequence {
-  0% { opacity: 0; transform: translate(-50%, 50px); }
-  5% { opacity: 1; transform: translate(-50%, 0); color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  
-  15%, 35% { color: var(--cyan); border: 1px solid var(--cyan); box-shadow: 0 0 30px var(--cyan); }
-  25% { color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  
-  45% { opacity: 1; transform: translate(-50%, 0); color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  50% { opacity: 0; transform: translate(-50%, 50px); }
-  100% { opacity: 0; transform: translate(-50%, 50px); }
-}
 .contact-info p {
   color: var(--text-muted);
   margin-bottom: 2rem;
