@@ -251,6 +251,7 @@ button.icon-btn:hover {
 
 .hero-content h1 {
   font-size: 2.8rem;
+  color: #fff;
   margin-bottom: 2rem;
   font-weight: 800;
   text-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -258,9 +259,9 @@ button.icon-btn:hover {
 }
 
 @keyframes heroCyanFlash {
-  0%, 85%, 100% { color: var(--text-color); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  0%, 85%, 100% { color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
   90%, 96% { color: var(--cyan); text-shadow: 0 0 35px var(--cyan); }
-  93% { color: var(--text-color); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+  93% { color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
 }.section-content {
   background: var(--bg-color);
   width: 100%;
