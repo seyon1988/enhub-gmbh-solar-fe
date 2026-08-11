@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Moon, Sun, Phone, Mail, MapPin, Leaf, Shield, Info, Menu, X } from 'lucide-react';
+import { Moon, Sun, Globe, Phone, Mail, MapPin, Leaf, Shield, Info, Menu, X } from 'lucide-react';
 import './index.css';
 
 // Intersection Observer Hook for scroll animations
@@ -183,6 +183,10 @@ function App() {
             <div className="electric-line hero-line-16"></div>
           </div>
           <div className="hero-content animate-on-scroll">
+            <div className="hero-url-badge">
+              <Globe size={18} style={{ marginRight: 8 }} />
+              <a href="https://www.enhub.one" target="_blank" rel="noopener noreferrer">www.enhub.one</a>
+            </div>
             <h1>{t('message')}</h1>
           </div>
         </section>
