@@ -193,7 +193,7 @@ button.icon-btn:hover {
   background-size: cover;
   background-position: center;
   z-index: 0;
-  animation: droneMovement 15s infinite alternate ease-in-out;
+  animation: droneMovement 10s infinite alternate ease-in-out;
 }
 
 @keyframes droneMovement {
