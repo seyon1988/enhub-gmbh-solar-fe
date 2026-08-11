@@ -138,9 +138,9 @@ nav a:hover {
 
 nav a.active {
   color: #ffffff;
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-  border-color: #ea580c;
-  box-shadow: 0 0 16px rgba(234, 88, 12, 0.6);
+  background: linear-gradient(135deg, #00b75a 0%, #10b981 100%);
+  border-color: #00b75a;
+  box-shadow: 0 0 16px rgba(0, 183, 90, 0.6);
   font-weight: 800;
 }
 
