@@ -250,7 +250,7 @@ button.icon-btn:hover {
   font-size: clamp(0.75rem, 3.5vw, 2.5rem);
   white-space: nowrap;
   color: #fff;
-  margin-bottom: 2rem;
+  margin: 0;
   font-weight: 800;
   text-shadow: 0 4px 20px rgba(0,0,0,0.5);
   animation: heroCyanFlash 5.25s infinite ease-in-out;
