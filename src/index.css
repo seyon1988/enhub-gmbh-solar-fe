@@ -92,6 +92,12 @@ header {
   cursor: pointer;
 }
 
+.logo-text {
+  color: var(--cyan);
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+}
+
 .logo-bg-wrapper {
   background: var(--bg-color-alt);
   padding: 0.4rem;

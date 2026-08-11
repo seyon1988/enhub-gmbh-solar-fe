@@ -66,9 +66,9 @@ function App() {
         {/* Logo: Image + Text with background for visibility */}
         <div className="logo-container" onClick={() => scrollTo('home')}>
           <div className="logo-bg-wrapper">
-            <img src="/logo_001.png" alt="EnHUB Logo" className="logo-img" />
+            <img src="/logo_002.png" alt="EnHUB Logo" className="logo-img" />
           </div>
-          <span>EnHUB</span>
+          <span className="logo-text">EnHUB</span>
         </div>
         
         <nav>
