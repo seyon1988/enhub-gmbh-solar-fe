@@ -54,18 +54,22 @@ html, body {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar,
+.app-container::-webkit-scrollbar {
   width: 10px;
 }
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track,
+.app-container::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ea580c 0%, #f97316 100%);
+::-webkit-scrollbar-thumb,
+.app-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00b75a 0%, #10b981 100%);
   border-radius: 5px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #c2410c 0%, #ea580c 100%);
+::-webkit-scrollbar-thumb:hover,
+.app-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #047857 0%, #00b75a 100%);
 }
 
 header {
