@@ -129,11 +129,13 @@ nav a {
   background: rgba(6, 182, 212, 0.05);
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: #fff;
   background: var(--cyan);
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
   border-color: var(--cyan);
+  font-weight: 700;
 }
 
 .controls {

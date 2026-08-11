@@ -29,8 +29,31 @@ function useScrollReveal() {
 function App() {
   const { t, i18n } = useTranslation();
   const [isDark, setIsDark] = useState(true);
+  const [activeTab, setActiveTab] = useState('home');
 
   useScrollReveal();
+
+  useEffect(() => {
+    const sectionIds = ['home', 'solar', 'batteries', 'info', 'about', 'contact'];
+    const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   useEffect(() => {
     if (isDark) {
@@ -45,6 +68,7 @@ function App() {
   };
 
   const scrollTo = (id: string) => {
+    setActiveTab(id);
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -70,12 +94,12 @@ function App() {
         </div>
         
         <nav>
-          <a onClick={() => scrollTo('home')}>{t('tab1')}</a>
-          <a onClick={() => scrollTo('solar')}>{t('tab2')}</a>
-          <a onClick={() => scrollTo('batteries')}>{t('tab3')}</a>
-          <a onClick={() => scrollTo('info')}>{t('tab4')}</a>
-          <a onClick={() => scrollTo('about')}>{t('tab5')}</a>
-          <a onClick={() => scrollTo('contact')}>{t('tab6')}</a>
+          <a className={activeTab === 'home' ? 'active' : ''} onClick={() => scrollTo('home')}>{t('tab1')}</a>
+          <a className={activeTab === 'solar' ? 'active' : ''} onClick={() => scrollTo('solar')}>{t('tab2')}</a>
+          <a className={activeTab === 'batteries' ? 'active' : ''} onClick={() => scrollTo('batteries')}>{t('tab3')}</a>
+          <a className={activeTab === 'info' ? 'active' : ''} onClick={() => scrollTo('info')}>{t('tab4')}</a>
+          <a className={activeTab === 'about' ? 'active' : ''} onClick={() => scrollTo('about')}>{t('tab5')}</a>
+          <a className={activeTab === 'contact' ? 'active' : ''} onClick={() => scrollTo('contact')}>{t('tab6')}</a>
         </nav>
 
         <div className="controls">
