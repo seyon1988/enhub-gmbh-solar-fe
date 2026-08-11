@@ -123,6 +123,24 @@ function App() {
       <main>
         {/* 1. HERO SECTION */}
         <section id="home" className="section hero-section">
+          <div className="hero-electricity-overlay">
+            <div className="electric-line hero-line-1"></div>
+            <div className="electric-line hero-line-2"></div>
+            <div className="electric-line hero-line-3"></div>
+            <div className="electric-line hero-line-4"></div>
+            <div className="electric-line hero-line-5"></div>
+            <div className="electric-line hero-line-6"></div>
+            <div className="electric-line hero-line-7"></div>
+            <div className="electric-line hero-line-8"></div>
+            <div className="electric-line hero-line-9"></div>
+            <div className="electric-line hero-line-10"></div>
+            <div className="electric-line hero-line-11"></div>
+            <div className="electric-line hero-line-12"></div>
+            <div className="electric-line hero-line-13"></div>
+            <div className="electric-line hero-line-14"></div>
+            <div className="electric-line hero-line-15"></div>
+            <div className="electric-line hero-line-16"></div>
+          </div>
           <div className="hero-content animate-on-scroll">
             <h1>{t('message')}</h1>
           </div>

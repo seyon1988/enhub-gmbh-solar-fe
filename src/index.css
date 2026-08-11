@@ -681,3 +681,31 @@ footer {
   0% { transform: translateY(0); }
   100% { transform: translateY(calc(-100vh - 600px)); }
 }
+
+/* 4x Hero Section Electricity Overlay */
+.hero-electricity-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero-line-1 { top: 10%; left: -300px; height: 2px; width: 250px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); animation: shootHorizontal 3.5s infinite linear; animation-delay: 0.2s; }
+.hero-line-2 { top: 20%; right: -300px; height: 2px; width: 300px; background: linear-gradient(270deg, transparent, var(--cyan), transparent); animation: shootHorizontalReverse 4s infinite linear; animation-delay: 1.1s; }
+.hero-line-3 { top: 35%; left: -300px; height: 2px; width: 200px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); animation: shootHorizontal 3s infinite linear; animation-delay: 2.3s; }
+.hero-line-4 { top: 50%; right: -300px; height: 2px; width: 350px; background: linear-gradient(270deg, transparent, var(--cyan), transparent); animation: shootHorizontalReverse 4.5s infinite linear; animation-delay: 0.7s; }
+.hero-line-5 { top: 65%; left: -300px; height: 2px; width: 280px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); animation: shootHorizontal 3.8s infinite linear; animation-delay: 1.8s; }
+.hero-line-6 { top: 78%; right: -300px; height: 2px; width: 220px; background: linear-gradient(270deg, transparent, var(--cyan), transparent); animation: shootHorizontalReverse 3.2s infinite linear; animation-delay: 2.9s; }
+.hero-line-7 { top: 88%; left: -300px; height: 2px; width: 320px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); animation: shootHorizontal 4.2s infinite linear; animation-delay: 0.5s; }
+
+.hero-line-8 { left: 10%; top: -300px; width: 2px; height: 200px; background: linear-gradient(180deg, transparent, var(--cyan), transparent); animation: shootVertical 4s infinite linear; animation-delay: 0.4s; }
+.hero-line-9 { left: 22%; bottom: -300px; width: 2px; height: 280px; background: linear-gradient(0deg, transparent, var(--cyan), transparent); animation: shootVerticalReverse 3.6s infinite linear; animation-delay: 1.5s; }
+.hero-line-10 { left: 38%; top: -300px; width: 2px; height: 320px; background: linear-gradient(180deg, transparent, var(--cyan), transparent); animation: shootVertical 4.8s infinite linear; animation-delay: 2.1s; }
+.hero-line-11 { left: 52%; bottom: -300px; width: 2px; height: 240px; background: linear-gradient(0deg, transparent, var(--cyan), transparent); animation: shootVerticalReverse 3.3s infinite linear; animation-delay: 0.9s; }
+.hero-line-12 { left: 68%; top: -300px; width: 2px; height: 300px; background: linear-gradient(180deg, transparent, var(--cyan), transparent); animation: shootVertical 4.1s infinite linear; animation-delay: 1.7s; }
+.hero-line-13 { left: 82%; bottom: -300px; width: 2px; height: 260px; background: linear-gradient(0deg, transparent, var(--cyan), transparent); animation: shootVerticalReverse 3.9s infinite linear; animation-delay: 2.6s; }
+.hero-line-14 { left: 92%; top: -300px; width: 2px; height: 350px; background: linear-gradient(180deg, transparent, var(--cyan), transparent); animation: shootVertical 4.4s infinite linear; animation-delay: 0.1s; }
+
+.hero-line-15 { top: 25%; left: -300px; height: 2px; width: 400px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); animation: shootHorizontal 5s infinite linear; animation-delay: 3.1s; }
+.hero-line-16 { top: 70%; right: -300px; height: 2px; width: 380px; background: linear-gradient(270deg, transparent, var(--cyan), transparent); animation: shootHorizontalReverse 4.7s infinite linear; animation-delay: 1.3s; }
