@@ -93,9 +93,13 @@ header {
 }
 
 .logo-text {
-  color: #fea801;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #fea801, #00f1fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .logo-img {
