@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Moon, Sun, Globe, Sun as SunIcon, Battery, Zap, Phone, Mail, MapPin, Leaf, Shield, Info } from 'lucide-react';
+import { Moon, Sun, Globe, Sun as SunIcon, Battery, Phone, Mail, MapPin, Leaf, Shield, Info } from 'lucide-react';
 import './index.css';
 
 // Intersection Observer Hook for scroll animations
