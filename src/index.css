@@ -101,7 +101,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 80px;
   background: var(--header-bg);
   backdrop-filter: blur(12px);
   display: flex;
