@@ -96,8 +96,8 @@ function App() {
       <header>
         {/* Logo: Image + Text directly */}
         <div className="logo-container" onClick={() => scrollTo('home')}>
-          <img src="/logo_002.png" alt="EnHUB Logo" className="logo-img" />
-          <span className="logo-text">EnHUB</span>
+          <img src="/logo_003.png" alt="EnHub GmbH Logo" className="logo-img" />
+          <span className="logo-text">EnHub GmbH</span>
         </div>
         
         <nav className="desktop-nav">
