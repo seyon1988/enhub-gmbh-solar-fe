@@ -1,7 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation (v9 Milestone)
+# enHub GmbH Logo Animation Design Documentation (v10 Milestone - Final Selected Concept)
 
 > [!NOTE]
-> **Milestone Tag**: `v9.0-logo-animation-final` (✅ **Active Website Version - Pushed & Deployed Live**)  
+> **Milestone Tag**: `v10.0-logo-animation-final` (🌟 **Final Selected Concept: Percentage-Scaled Leaves Glow - Pushed & Deployed Live**)  
 > This document tracks the active design specifications, current implementation status, and complete version memory history for the enHub GmbH animated logo assets.
 
 ---
@@ -36,7 +36,8 @@
 
 | Asset Path | Status / Usage | Behavior & Peak State | Dissolve Timing & Features |
 | :--- | :--- | :--- | :--- |
-| **`public/logo_animated.gif`** | 🌟 **Active Website Logo (v7.0)** | 5 leaves energize 1-by-1 to yellow; Combined unit (Bolt, Top Arch, Right Bar) ignites to 100% yellow **only after all 5 leaves turn yellow**; Left Bar & Bottom Curve stay green. | 500ms Two-Stage Seamless Dissolve (250ms Yellow ➔ `logo_004.png` ➔ 250ms Green, **no pause**). |
+| **`public/logo_animated.gif`** | 🌟 **Active Website Logo (FINAL)** | **Concept 4 (Percentage-Scaled Leaves Glow)**: 5 leaves intensity scales dynamically ($\text{Active Leaves} \times 100 / 5$). Combined unit ignites smoothly. | 6-Phase sequence with 1.0s ultra-smooth two-stage dissolve & Phase 6 rest. |
+| **`public/logo_animated_preview_4.gif`** | 🔬 **Selected Base Concept 4** | Leaves yellow intensity scales dynamically based on the percentage equation: $\text{Active Leaves} \times 100 / 5$ (20% ➔ 40% ➔ 60% ➔ 80% ➔ 100%). | Dynamic percentage-scaled leaf glow intensity. |
 | **`public/logo_animated_preview.gif`** | 🔬 **Concept 1 (Symmetrical)** | Phase 2 is the **exact inverted mirror of Phase 4 & 5** (Green ➔ `logo_004.png` colors ➔ 100% Electric Yellow) on partial capsule. | Two-Stage Symmetrical Energize & Dissolve (500ms entrance, 1.5s yellow hold, 500ms exit). |
 | **`public/logo_animated_preview_2.gif`** | 🔬 **Concept 2 (Full Capsule Max Cap)** | **ALL 4 Capsule Borders + Bolt (IDs 4, 8, 9, 10 + 7)** reach peak state of **original `logo_004.png` colors** (max yellow limitation = `logo_004.png`). | Full capsule energize & dissolve between base green and `logo_004.png`. |
 | **`public/logo_animated_preview_3.gif`** | 🔬 **Alternative 6-Phase Concept 3** | Includes **Phase 6 (0.25s solid emerald green rest `#22a050`)** after smooth 1.0s total dissolve (500ms Yellow ➔ `logo_004.png` + 500ms `logo_004.png` ➔ Base Green). | 6-Phase sequence with 0.25s Phase 6 green rest. |
