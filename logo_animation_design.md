@@ -1,7 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation (v7 Milestone)
+# enHub GmbH Logo Animation Design Documentation (v8 Milestone)
 
 > [!NOTE]
-> **Milestone Tag**: `v7.0-logo-animation-final` (✅ **Pushed & Deployed Live**)  
+> **Milestone Tag**: `v8.0-logo-animation` (✅ **Pushed & Deployed Live**)  
 > This document tracks the active design specifications, current implementation status, and complete version memory history for the enHub GmbH animated logo assets.
 
 ---
@@ -16,17 +16,18 @@
 
 ---
 
-## ⏱️ Active Website Logo Timeline & Sequence (`logo_animated.gif` - v7.0)
+## ⏱️ Active Website Logo Timeline & Sequence (`logo_animated.gif` - v8.0)
 
-**Total Duration**: 3.5 Seconds Total Loop (210 Frames @ 60 FPS)
+**Total Duration**: 3.75 Seconds Total Loop (225 Frames @ 60 FPS)
 
 | Phase # | Phase Name | Time Window | Frame Range | Duration | Exact Visual & Color Dynamics |
 | :---: | :--- | :---: | :---: | :---: | :--- |
-| **1** | **Base Green State** | `0.00s – 0.50s` | `0 – 29` | **0.5s** | Entire logo rests at **100% solid base emerald green** (`#22a050`). Zero glow. |
-| **2** | **Leaves Sequence Phase** | `0.50s – 2.00s` | `30 – 119` | **1.5s** | 5 Leaves light up **1-by-1 sequentially from left to right** to pure electric yellow (`#ffeb14`). |
-| **3** | **Combined Unit Ignition Phase** | `2.00s – 2.50s` | `120 – 149` | **0.5s** | **ONLY AFTER ALL 5 LEAVES ARE 100% YELLOW**, the **Combined Unit** (Lightning Bolt + Top Arch + Right Bar) ignites into **100% pure electric yellow** with max yellow glow aura. |
+| **1** | **Base Green State** | `0.00s – 0.50s` | `0 – 29` | **0.50s** | Entire logo rests at **100% solid base emerald green** (`#22a050`). Zero glow. |
+| **2** | **Leaves Sequence Phase** | `0.50s – 2.00s` | `30 – 119` | **1.50s** | 5 Leaves light up **1-by-1 sequentially from left to right** to pure electric yellow (`#ffeb14`). |
+| **3** | **Combined Unit Ignition Phase** | `2.00s – 2.50s` | `120 – 149` | **0.50s** | **ONLY AFTER ALL 5 LEAVES ARE 100% YELLOW**, the **Combined Unit** (Lightning Bolt + Top Arch + Right Bar) ignites into **100% pure electric yellow** with max yellow glow aura. |
 | **4** | **Dissolve Part 1 (Yellow ➔ Original)** | `2.50s – 2.75s` | `150 – 164` | **250ms** | Electric yellow smoothly dissolves into **original `logo_004.png` multi-tone gradient colors**. |
-| **5** | **Dissolve Part 2 (Original ➔ Green)** | `2.75s – 3.00s` | `165 – 179` | **250ms** | Original `logo_004.png` gradient colors smoothly dissolve directly into **100% base emerald green** (*no pause, seamless loop reset*). |
+| **5** | **Dissolve Part 2 (Original ➔ Green)** | `2.75s – 3.00s` | `165 – 179` | **250ms** | Original `logo_004.png` gradient colors smoothly dissolve directly into **100% base emerald green**. |
+| **6** | **Final Emerald Green Rest State** 🆕 | `3.00s – 3.25s` | `180 – 194` | **0.25s** | Holds at **solid base emerald green** (`#22a050`) before clean loop reset. |
 
 *(Frames `180 – 209` / `3.00s – 3.50s` hold solid emerald green rest state before repeating).*
 
