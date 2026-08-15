@@ -1,7 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation (v6 Milestone)
+# enHub GmbH Logo Animation Design Documentation (v7 Milestone)
 
 > [!NOTE]
-> **Milestone Tag**: `v6.0-logo-animation`  
+> **Milestone Tag**: `v7.0-logo-animation`  
 > This document tracks the active design specifications, current implementation status, and remaining work/open decisions for the enHub GmbH animated logo.
 
 ---
@@ -21,15 +21,15 @@ Herbert Admin requested an animated version of **Werner's enHub Logo** (`logo_00
 
 ---
 
-### 2. Animation Timeline & Sequence (3.0 Seconds Total Loop - 180 Frames @ 60 FPS)
+### 2. Animation Timeline & Sequence (3.5 Seconds Total Loop - 210 Frames @ 60 FPS)
 
 | Time Window | Frame Range (60 fps) | Description | Visual State |
 | :--- | :--- | :--- | :--- |
 | **0.00s – 0.50s** | `0 – 29` | **Base State** | Entire logo (5 leaves + bolt + outer frame) is 100% solid emerald green (0.5s). |
-| **0.50s – 2.00s** | `30 – 119` | **Energize Phase** | Leaves energize 1 by 1 from left to right. Combined unit energizes smoothly in sync (1.5s). |
-| **2.00s – 2.50s** | `120 – 149` | **Stay Yellow Phase** | All elements hold 100% full vibrant yellow and maximum glow aura (0.5s). |
-| **2.50s – 2.75s** | `150 – 164` | **Transition to Original (250ms)** | Electric yellow smoothly dissolves into **original `logo_004.png` gradient colors**. |
-| **2.75s – 3.00s** | `165 – 179` | **Transition to Green (250ms)** | Original `logo_004.png` colors smoothly dissolve into **100% base emerald green** (no pause!). |
+| **0.50s – 2.00s** | `30 – 119` | **Phase 1: Leaves Sequence** | 5 leaves energize 1 by 1 from left to right to pure yellow (1.5s). |
+| **2.00s – 2.50s** | `120 – 149` | **Phase 2: Combined Unit Ignition** | **AFTER ALL 5 LEAVES ARE 100% YELLOW**, Combined Unit (Bolt + Top Arch + Right Bar) ignites to **COMPLETELY 100% PURE YELLOW** (0.5s). |
+| **2.50s – 2.75s** | `150 – 164` | **Dissolve Part 1 (250ms)** | Electric yellow smoothly dissolves into **original `logo_004.png` gradient colors**. |
+| **2.75s – 3.00s** | `165 – 179` | **Dissolve Part 2 (250ms)** | Original `logo_004.png` colors smoothly dissolve into **100% base emerald green** (no pause!). |
 
 ---
 
