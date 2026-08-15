@@ -1,6 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation
+# enHub GmbH Logo Animation Design Documentation (v1 Milestone)
 
 > [!NOTE]
+> **Milestone Tag**: `v1.0-logo-animation`  
 > This document tracks the active design specifications, current implementation status, and remaining work/open decisions for the enHub GmbH animated logo.
 
 ---
