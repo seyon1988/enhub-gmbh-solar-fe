@@ -1,7 +1,7 @@
 # enHub GmbH Logo Animation Design Documentation (v9 Milestone)
 
 > [!NOTE]
-> **Milestone Tag**: `v9.0-logo-animation` (✅ **Pushed & Deployed Live**)  
+> **Milestone Tag**: `v9.0-logo-animation-final` (✅ **Active Website Version - Pushed & Deployed Live**)  
 > This document tracks the active design specifications, current implementation status, and complete version memory history for the enHub GmbH animated logo assets.
 
 ---
