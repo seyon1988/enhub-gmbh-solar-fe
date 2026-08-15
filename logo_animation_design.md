@@ -1,7 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation (v5 Milestone)
+# enHub GmbH Logo Animation Design Documentation (v6 Milestone)
 
 > [!NOTE]
-> **Milestone Tag**: `v5.0-logo-animation`  
+> **Milestone Tag**: `v6.0-logo-animation`  
 > This document tracks the active design specifications, current implementation status, and remaining work/open decisions for the enHub GmbH animated logo.
 
 ---
@@ -25,10 +25,11 @@ Herbert Admin requested an animated version of **Werner's enHub Logo** (`logo_00
 
 | Time Window | Frame Range (60 fps) | Description | Visual State |
 | :--- | :--- | :--- | :--- |
-| **0.0s – 0.5s** | `0 – 29` | **Base State** | Entire logo (5 leaves + bolt + outer frame) is 100% solid emerald green (0.5s). |
-| **0.5s – 2.0s** | `30 – 119` | **Energize Phase** | Leaves energize 1 by 1 from left to right. Combined unit energizes smoothly in sync (**EXACTLY 1.5s**). |
-| **2.0s – 2.5s** | `120 – 149` | **Stay Yellow Phase** | All elements hold 100% full vibrant yellow and maximum glow aura (0.5s). |
-| **2.5s – 3.0s** | `150 – 179` | **Dissolve Phase** | All lit elements dissolve smoothly back into emerald green together (0.5s). |
+| **0.00s – 0.50s** | `0 – 29` | **Base State** | Entire logo (5 leaves + bolt + outer frame) is 100% solid emerald green (0.5s). |
+| **0.50s – 2.00s** | `30 – 119` | **Energize Phase** | Leaves energize 1 by 1 from left to right. Combined unit energizes smoothly in sync (1.5s). |
+| **2.00s – 2.50s** | `120 – 149` | **Stay Yellow Phase** | All elements hold 100% full vibrant yellow and maximum glow aura (0.5s). |
+| **2.50s – 2.75s** | `150 – 164` | **Transition to Original (250ms)** | Electric yellow smoothly dissolves into **original `logo_004.png` gradient colors**. |
+| **2.75s – 3.00s** | `165 – 179` | **Transition to Green (250ms)** | Original `logo_004.png` colors smoothly dissolve into **100% base emerald green** (no pause!). |
 
 ---
 
@@ -39,34 +40,37 @@ Herbert Admin requested an animated version of **Werner's enHub Logo** (`logo_00
 
 ---
 
+## 🖼️ Active GIF Assets Comparison
+
+| Asset Path | Usage | Behavior & Peak State | Dissolve Timing |
+| :--- | :--- | :--- | :--- |
+| **`public/logo_animated.gif`** | 🌟 **Active Website Logo** | 5 leaves energize to pure yellow; Combined unit (Bolt, Top Arch, Right Bar) energize to yellow; Left Bar & Bottom Curve stay green. | 500ms Two-Stage Seamless Dissolve (250ms Yellow -> `logo_004.png` -> 250ms Green, **no pause**). |
+| **`public/logo_animated_preview.gif`** | 🔬 **Alternative Concept Asset** | 5 leaves energize to pure yellow; **ALL 4 Capsule Borders + Bolt (IDs 4, 8, 9, 10 + 7)** reach peak state of **original `logo_004.png` colors**. | 500ms Dissolve (`logo_004.png` colors -> Base Green). |
+
+---
+
 ## 🛠️ Logo Geometry Analysis & Component Map
 
 Using connected component analysis on `logo_004.png`:
 
-| ID | Component Name | Geometry Description |
-| :---: | :--- | :--- |
-| `5` | **Leaf 1** | Far-left ray (`x=2, y=122`) |
-| `2` | **Leaf 2** | Top-left ray (`x=63, y=38`) |
-| `1` | **Leaf 3** | Top-center ray (`x=163, y=3`) |
-| `3` | **Leaf 4** | Top-right ray (`x=231, y=38`) |
-| `6` | **Leaf 5** | Far-right ray (`x=283, y=122`) |
-| `7` | **Lightning Bolt** | Central energy symbol (`x=116, y=129`) |
-| `4` | **Outer Arch** | Capsule top curved dome arch (`y=85`) |
-| `8` | **Outer Left Bar** | Capsule middle-left vertical bar (`y=207`) |
-| `9` | **Outer Right Bar** | Capsule middle-right vertical bar (`y=207`) |
-| `10` | **Outer Bottom Curve** | Capsule bottom U-curve base (`y=288`) |
+| ID | Component Name | Geometry Description | Active Status in Website Logo (`logo_animated.gif`) |
+| :---: | :--- | :--- | :--- |
+| `5` | **Leaf 1** | Far-left ray (`x=2, y=122`) | ⚡ Animated (Energizes 1st) |
+| `2` | **Leaf 2** | Top-left ray (`x=63, y=38`) | ⚡ Animated (Energizes 2nd) |
+| `1` | **Leaf 3** | Top-center ray (`x=163, y=3`) | ⚡ Animated (Energizes 3rd) |
+| `3` | **Leaf 4** | Top-right ray (`x=231, y=38`) | ⚡ Animated (Energizes 4th) |
+| `6` | **Leaf 5** | Far-right ray (`x=283, y=122`) | ⚡ Animated (Energizes 5th) |
+| `7` | **Lightning Bolt** | Central energy symbol (`x=116, y=129`) | ⚡ Animated (Combined Unit) |
+| `4` | **Outer Arch** | Capsule top curved dome arch (`y=85`) | ⚡ Animated (Combined Unit) |
+| `9` | **Outer Right Bar** | Capsule middle-right vertical bar (`y=207`) | ⚡ Animated (Combined Unit) |
+| `8` | **Outer Left Bar** | Capsule middle-left vertical bar (`y=207`) | 🔒 Strictly Isolated (100% Solid Green) |
+| `10` | **Outer Bottom Curve** | Capsule bottom U-curve base (`y=288`) | 🔒 Strictly Isolated (100% Solid Green) |
 
 ---
 
-## 📋 Open Tasks & Next Steps for Discussion
+## 📋 Milestone Checklist & Version History
 
-> [!IMPORTANT]
-> The outer capsule ring components (`ID 4, 8, 9, 10`) are currently unanimated base green. We can now design how they should react during the animation sequence.
-
-- [x] **Strict Bolt-Follows-Leaves Color Rule**: Lightning bolt color is strictly synchronized with leaves active color across all frames (Energize, Stay, and Dissolve).
-- [x] **Pure Electric Yellow Glow Math**: Glow aura uses proportional R/G channel additive blending (`#ffeb14`), preventing orange color shifts.
-- [x] **Unified Combined Unit (Bolt + Top Arch + Right Bar)**: Energizes smoothly 1s->5s, holds 100% yellow 5s->7s, and dissolves 7s->9s.
-- [ ] **Left Bar (ID 8) + Bottom Curve (ID 10) Animation**: Pending design discussion.
-- [ ] **Timing & Transition Refinement**: Adjust step delays, hold duration, or dissolve duration if needed.
-- [ ] **Glow & Shadow Effects**: Explore adding drop-shadows or glow halos to the lit yellow elements.
-- [ ] **Final Deployment**: Sync approved GIF to live site repo.
+- [x] **v6.0-logo-animation**:
+  - Removed 0.5s logo pause entirely from `logo_animated.gif` (250ms Yellow -> `logo_004.png` -> 250ms Green direct seamless dissolve).
+  - Maintained `logo_animated_preview.gif` as an alternative concept asset (ALL capsule borders + bolt peak state = `logo_004.png`).
+  - Active website header configured to render `/logo_animated.gif`.
