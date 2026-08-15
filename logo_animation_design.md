@@ -1,7 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation (v1 Milestone)
+# enHub GmbH Logo Animation Design Documentation (v2 Milestone)
 
 > [!NOTE]
-> **Milestone Tag**: `v1.0-logo-animation`  
+> **Milestone Tag**: `v2.0-logo-animation`  
 > This document tracks the active design specifications, current implementation status, and remaining work/open decisions for the enHub GmbH animated logo.
 
 ---
@@ -66,9 +66,9 @@ Using connected component analysis on `logo_004.png`:
 > [!IMPORTANT]
 > The outer capsule ring components (`ID 4, 8, 9, 10`) are currently unanimated base green. We can now design how they should react during the animation sequence.
 
-- [x] **Top Arch (ID 4) + Right Bar (ID 9) Animation**: 
-  - **Top Arch (ID 4)**: Fills Left-to-Right first (Leaves 1 to 3).
-  - **Strict Rule**: Top Arch is **100% completely yellow** BEFORE the Right Vertical Bar (ID 9) starts turning yellow Top-to-Bottom (Leaves 4 and 5).
+- [x] **60 FPS High-Smoothness Animation**: Increased frame count to 540 frames @ 60 FPS.
+- [x] **Energize (Materialize) Entrance (1s -> 5s)**: Leaves, bolt, arch, and bar smoothly materialize / blend from green into electric yellow (opposite of dissolve).
+- [x] **Dissolve Exit (7s -> 9s)**: All lit elements dissolve smoothly back into base green together.
 - [ ] **Left Bar (ID 8) + Bottom Curve (ID 10) Animation**: Pending design discussion.
 - [ ] **Timing & Transition Refinement**: Adjust step delays, hold duration, or dissolve duration if needed.
 - [ ] **Glow & Shadow Effects**: Explore adding drop-shadows or glow halos to the lit yellow elements.
