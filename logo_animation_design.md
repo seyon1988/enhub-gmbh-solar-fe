@@ -1,7 +1,7 @@
-# enHub GmbH Logo Animation Design Documentation (v3 Milestone)
+# enHub GmbH Logo Animation Design Documentation (v4 Milestone)
 
 > [!NOTE]
-> **Milestone Tag**: `v3.0-logo-animation`  
+> **Milestone Tag**: `v4.0-logo-animation`  
 > This document tracks the active design specifications, current implementation status, and remaining work/open decisions for the enHub GmbH animated logo.
 
 ---
@@ -21,17 +21,14 @@ Herbert Admin requested an animated version of **Werner's enHub Logo** (`logo_00
 
 ---
 
-### 2. Animation Timeline & Sequence (9.0 Seconds Total Loop)
+### 2. Animation Timeline & Sequence (5.4 Seconds Total Loop - 0.6x T, 540 Frames)
 
-| Time Window | Frame Range (30 fps) | Description | Visual State |
+| Time Window | Frame Range (100 fps) | Description | Visual State |
 | :--- | :--- | :--- | :--- |
-| **0.0s – 1.0s** | `0 – 29` | **Base State** | Entire logo (5 leaves + bolt + outer frame) is 100% solid emerald green. |
-| **1.0s – 2.0s** | `30 – 59` | **Step 1 (20%)** | Leaf 1 (far-left) turns yellow. Lightning bolt fills **20%** yellow from bottom. |
-| **2.0s – 3.0s** | `60 – 89` | **Step 2 (40%)** | Leaf 2 (top-left) turns yellow. Lightning bolt fills **40%** yellow from bottom. |
-| **3.0s – 4.0s** | `90 – 119` | **Step 3 (60%)** | Leaf 3 (top-center) turns yellow. Lightning bolt fills **60%** yellow from bottom. |
-| **4.0s – 5.0s** | `120 – 149` | **Step 4 (80%)** | Leaf 4 (top-right) turns yellow. Lightning bolt fills **80%** yellow from bottom. |
-| **5.0s – 7.0s** | `150 – 209` | **Peak State (100%)** | All 5 leaves are yellow. Central lightning bolt is **100% pure yellow** down to the lowest pixel. Holds for 2 full seconds. |
-| **7.0s – 9.0s** | `210 – 269` | **Synchronized Dissolve** | Both leaves AND the lightning bolt smoothly fade together back to 100% green over 2.0 seconds. |
+| **0.0s – 0.6s** | `0 – 59` | **Base State** | Entire logo (5 leaves + bolt + outer frame) is 100% solid emerald green. |
+| **0.6s – 3.0s** | `60 – 299` | **Energize Phase** | Leaves energize 1 by 1 from left to right. Combined unit (bolt, arch, right bar) energizes smoothly in sync. |
+| **3.0s – 4.2s** | `300 – 419` | **Stay Yellow Phase** | All elements hold 100% full vibrant yellow and maximum glow aura. |
+| **4.2s – 5.4s** | `420 – 539` | **Dissolve Phase** | All lit elements dissolve smoothly back into emerald green together. |
 
 ---
 
