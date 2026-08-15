@@ -96,7 +96,7 @@ function App() {
       <header>
         {/* Logo: Image + Text directly */}
         <div className="logo-container" onClick={() => scrollTo('home')}>
-          <img src="/logo_animated.svg" alt="EnHub GmbH Logo" className="logo-img" />
+          <img src="/logo_animated.gif" alt="EnHub GmbH Logo" className="logo-img" />
           <span className="logo-text">EnHub GmbH</span>
         </div>
         
