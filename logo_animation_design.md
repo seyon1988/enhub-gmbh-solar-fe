@@ -64,9 +64,11 @@ Extracted via connected component analysis from `public/logo_004.png`:
 
 ---
 
-## 🔒 Permanent Design Rules
+## 🔒 Permanent Design Rules & Conventions
 
 1. **Strict Bolt Color Rule**: Lightning bolt color MUST strictly mirror the leaves active color calculation across all frames without independent tinting.
 2. **Pure Yellow Glow Math**: Glow aura overlay uses proportional R/G channel additive blending (`#ffeb14`), preventing orange color shifts.
-3. **Strict Isolation Rule**: Left Vertical Bar (`ID 8`) and Bottom U-Curve (`ID 10`) remain 100% solid base green across all frames in the primary logo.
+3. **Strict Isolation Rule**: Left Vertical Bar (`ID 8`) and Bottom U-Curve (`ID 10`) remain 100% solid base green (`#22a050`) across all frames in the primary logo.
 4. **V7 Ignition Sequence Rule**: Combined Unit (Bolt + Top Arch + Right Bar) ignites to 100% yellow ONLY AFTER all 5 leaves complete their yellow energize sequence.
+5. **Brand Gradient Symmetry Rule**: Color transitions between solid green and pure yellow MUST pass symmetrically through the multi-tone original brand gradient (`logo_004.png`) on both entrance and exit.
+6. **Percentage Glow Equation Rule**: Dynamic sequential leaf intensity scales via $\text{Active Leaves} \times 100\% / 5$ (20% ➔ 40% ➔ 60% ➔ 80% ➔ 100%).
