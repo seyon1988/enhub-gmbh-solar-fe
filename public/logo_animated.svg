@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 390" width="100%" height="100%">
+  <defs>
+    <!-- Base Gradient for Frame & Dim elements -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#84cc16"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Active Glow Filter -->
+    <filter id="yellowGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Default Dim State for Rays and Lightning */
+    .ray, .lightning {
+      transition: fill 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+      opacity: 0.35;
+      fill: #a3e635; /* default unlit ray color */
+    }
+
+    .lightning {
+      opacity: 0.3;
+      fill: #22c55e; /* default unlit lightning color */
+    }
+
+    /* Keyframe Animation Sequence matching Herbert's requirement:
+       - Total Loop Duration: 4.0 seconds
+       - 0s - 0.4s: Ray 1 lights up
+       - 0.4s - 0.8s: Ray 2 lights up
+       - 0.8s - 1.2s: Ray 3 lights up
+       - 1.2s - 1.6s: Ray 4 lights up
+       - 1.6s - 2.0s: Ray 5 lights up (All 5 lit)
+       - 2.2s - 3.4s: Inner Lightning Bolt turns bright yellow
+       - 3.4s - 4.0s: Fade out / reset loop
+    */
+
+    @keyframes lightRay1 {
+      0%, 5% { opacity: 0.35; fill: #a3e635; filter: none; }
+      10%, 82% { opacity: 1; fill: #facc15; filter: drop-shadow(0px 0px 6px #fde047); }
+      92%, 100% { opacity: 0.35; fill: #a3e635; filter: none; }
+    }
+
+    @keyframes lightRay2 {
+      0%, 15% { opacity: 0.35; fill: #a3e635; filter: none; }
+      20%, 82% { opacity: 1; fill: #facc15; filter: drop-shadow(0px 0px 6px #fde047); }
+      92%, 100% { opacity: 0.35; fill: #a3e635; filter: none; }
+    }
+
+    @keyframes lightRay3 {
+      0%, 25% { opacity: 0.35; fill: #a3e635; filter: none; }
+      30%, 82% { opacity: 1; fill: #facc15; filter: drop-shadow(0px 0px 6px #fde047); }
+      92%, 100% { opacity: 0.35; fill: #a3e635; filter: none; }
+    }
+
+    @keyframes lightRay4 {
+      0%, 35% { opacity: 0.35; fill: #a3e635; filter: none; }
+      40%, 82% { opacity: 1; fill: #facc15; filter: drop-shadow(0px 0px 6px #fde047); }
+      92%, 100% { opacity: 0.35; fill: #a3e635; filter: none; }
+    }
+
+    @keyframes lightRay5 {
+      0%, 45% { opacity: 0.35; fill: #a3e635; filter: none; }
+      50%, 82% { opacity: 1; fill: #facc15; filter: drop-shadow(0px 0px 6px #fde047); }
+      92%, 100% { opacity: 0.35; fill: #a3e635; filter: none; }
+    }
+
+    @keyframes lightLightning {
+      0%, 55% { opacity: 0.3; fill: #22c55e; filter: none; }
+      65%, 82% { opacity: 1; fill: #fde047; filter: drop-shadow(0px 0px 10px #fef08a); }
+      92%, 100% { opacity: 0.3; fill: #22c55e; filter: none; }
+    }
+
+    #ray-1 { animation: lightRay1 4s infinite ease-in-out; }
+    #ray-2 { animation: lightRay2 4s infinite ease-in-out; }
+    #ray-3 { animation: lightRay3 4s infinite ease-in-out; }
+    #ray-4 { animation: lightRay4 4s infinite ease-in-out; }
+    #ray-5 { animation: lightRay5 4s infinite ease-in-out; }
+    #lightning-bolt { animation: lightLightning 4s infinite ease-in-out; }
+
+    .capsule-frame {
+      fill: url(#bodyGrad);
+    }
+  </style>
+
+  <g id="logo-group">
+    <!-- 5 HALF-SUN RAYS (Numbered left to right: 1, 2, 3, 4, 5) -->
+    <!-- Ray 1 (Far Left) -->
+    <rect id="ray-1" class="ray" x="12" y="118" width="54" height="18" rx="9" transform="rotate(-18 39 127)" />
+    
+    <!-- Ray 2 (Top Left) -->
+    <rect id="ray-2" class="ray" x="65" y="38" width="54" height="18" rx="9" transform="rotate(-54 92 47)" />
+    
+    <!-- Ray 3 (Top Center) -->
+    <rect id="ray-3" class="ray" x="166" y="8" width="18" height="54" rx="9" />
+    
+    <!-- Ray 4 (Top Right) -->
+    <rect id="ray-4" class="ray" x="231" y="38" width="54" height="18" rx="9" transform="rotate(54 258 47)" />
+    
+    <!-- Ray 5 (Far Right) -->
+    <rect id="ray-5" class="ray" x="284" y="118" width="54" height="18" rx="9" transform="rotate(18 311 127)" />
+
+    <!-- CAPSULE / DOME FRAME (Segmented Pill Outline) -->
+    <g class="capsule-frame">
+      <!-- Upper Arch -->
+      <path d="M 68 185 C 68 115, 282 115, 282 185 L 264 185 C 264 130, 86 130, 86 185 Z" />
+      
+      <!-- Side Segments Upper -->
+      <rect x="68" y="200" width="18" height="42" rx="9" />
+      <rect x="264" y="200" width="18" height="42" rx="9" />
+      
+      <!-- Side Segments Lower -->
+      <rect x="68" y="254" width="18" height="42" rx="9" />
+      <rect x="264" y="254" width="18" height="42" rx="9" />
+      
+      <!-- Bottom U-Curve -->
+      <path d="M 68 308 L 68 315 C 68 380, 282 380, 282 315 L 282 308 L 264 308 L 264 315 C 264 365, 86 365, 86 315 L 86 308 Z" />
+    </g>
+
+    <!-- CENTRAL LIGHTNING BOLT (The "Inner S") -->
+    <path id="lightning-bolt" class="lightning" d="
+      M 192 128 
+      L 142 225 
+      H 185 
+      L 128 332 
+      L 236 215 
+      H 186 
+      Z" 
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>
