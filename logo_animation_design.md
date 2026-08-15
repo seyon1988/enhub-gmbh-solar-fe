@@ -41,7 +41,7 @@
 | **`public/logo_animated_preview_2.gif`** | 🔬 **Concept 2 (Full Capsule Max Cap)** | **ALL 4 Capsule Borders + Bolt (IDs 4, 8, 9, 10 + 7)** reach peak state of **original `logo_004.png` colors** (max yellow limitation = `logo_004.png`). | Full capsule energize & dissolve between base green and `logo_004.png`. |
 | **`public/logo_animated_preview_3.gif`** | 🔬 **Alternative 6-Phase Concept 3** | Includes **Phase 6 (0.25s solid emerald green rest `#22a050`)** after smooth 1.0s total dissolve (500ms Yellow ➔ `logo_004.png` + 500ms `logo_004.png` ➔ Base Green). | 6-Phase sequence with 0.25s Phase 6 green rest. |
 | **`public/logo_animated_preview_4.gif`** | 🔬 **Alternative Percentage Leaves Concept 4** | Leaves yellow intensity scales dynamically based on the percentage equation: $\text{Active Leaves} \times 100 / 5$ (20% ➔ 40% ➔ 60% ➔ 80% ➔ 100%). | Dynamic percentage-scaled leaf glow intensity. |
-| **`public/logo_animated_preview_5.gif`** | 🔬 **Alternative Symmetrical Yellow Filling Concept 5** | Yellow filling of Thunderbolt + Capsule follows the **exact same smooth pattern** as the green filling dissolve exit! | Symmetrical smooth yellow filling entrance & green dissolve exit. |
+| **`public/logo_animated_preview_5.gif`** | 🔬 **Alternative 2-Way Brand Gradient Concept 5** | Both Green ➔ Yellow entrance AND Yellow ➔ Green exit transition directly through the **Original Brand Gradient (`logo_004.png`)**! | Complete Symmetrical 2-Stage Brand Gradient Entrance & Exit. |
 
 ---
 
